@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ChapterContentPrompt>
+  <Meta>
+    <Purpose>Generate deep, practical content for a single C++ learning section</Purpose>
+    <ContentStyle>Clear explanations + syntax rules + compilable code examples + common pitfalls + best practices</ContentStyle>
+    <OutputFormat>React JSX component using the LearnCpp content block components</OutputFormat>
+  </Meta>
+
+  <Location>
+    <Subject>{SUBJECT}</Subject>
+    <Chapter>{CHAPTER_TITLE}</Chapter>
+    <Section>{SECTION_TITLE}</Section>
+  </Location>
+
+  <Prerequisites>
+    <Concepts>{REQUIRED_CONCEPTS}</Concepts>
+    <CppStandard>{MINIMUM_CPP_STANDARD}</CppStandard>
+  </Prerequisites>
+
+  <ContentSections>
+    <LanguageEvolution>
+      <Instruction>Which C++ standard introduced this feature, why it was needed, what problem it solved, and what came before it</Instruction>
+    </LanguageEvolution>
+
+    <Motivation>
+      <Instruction>Real-world problem this concept solves. Show the problem BEFORE the solution. Use a relatable scenario (game dev, systems programming, embedded, etc.)</Instruction>
+    </Motivation>
+
+    <InformalIntuition>
+      <Instruction>Plain-English explanation with analogies. No code yet. Build mental model first.</Instruction>
+    </InformalIntuition>
+
+    <Syntax>
+      <Instruction>Exact C++ syntax with grammar rules. Use SyntaxBlock and DefinitionBlock components.</Instruction>
+      <Include>declaration syntax, usage patterns, variations</Include>
+    </Syntax>
+
+    <Rules>
+      <Instruction>Language rules, guarantees, and behavior specifications from the C++ standard</Instruction>
+      <Include>what the standard guarantees, implementation-defined behavior, order of evaluation</Include>
+    </Rules>
+
+    <MemoryVisualization>
+      <Instruction>Specify interactive visualization showing memory layout, object lifetime, or data flow</Instruction>
+      <VisualizationType>memory-layout|pointer-diagram|call-stack|object-lifetime|vtable-layout</VisualizationType>
+      <WhatToShow>Describe exactly what the visualization should demonstrate</WhatToShow>
+    </MemoryVisualization>
+
+    <CodeExamples>
+      <Example>
+        <Description>What this example demonstrates</Description>
+        <CppCode standard="C++17" compiler_flags="-std=c++17 -Wall">Complete, compilable program</CppCode>
+        <ExpectedOutput>Exact program output</ExpectedOutput>
+        <Explanation>Line-by-line or block-by-block explanation</Explanation>
+      </Example>
+    </CodeExamples>
+
+    <RealWorldApplication>
+      <UseCase/>
+      <WhereUsedInPractice>List specific domains: game engines, OS kernels, embedded systems, HPC, databases</WhereUsedInPractice>
+    </RealWorldApplication>
+
+    <CompilerNotes>
+      <Instruction>GCC vs Clang vs MSVC differences, useful compiler flags, diagnostics</Instruction>
+      <Component>CompilerNoteBlock</Component>
+    </CompilerNotes>
+
+    <UndefinedBehavior>
+      <Instruction>Any undefined behavior related to this topic. Use WarningBlock component.</Instruction>
+      <Include>what causes UB, how to detect it (sanitizers), how to avoid it</Include>
+    </UndefinedBehavior>
+
+    <CommonMistakes>
+      <Instruction>List 3-5 common errors, misconceptions, or pitfalls beginners make</Instruction>
+    </CommonMistakes>
+
+    <BestPractices>
+      <Instruction>Modern C++ best practices for this topic. Use BestPracticeBlock component.</Instruction>
+      <Sources>C++ Core Guidelines, Effective Modern C++, CppCon talks</Sources>
+    </BestPractices>
+
+    <Exercises>
+      <Exercise difficulty="beginner|intermediate|advanced|expert">
+        <Problem/>
+        <Hint/>
+        <Solution/>
+      </Exercise>
+    </Exercises>
+
+    <References>
+      <Reference type="cppreference|textbook|cppcon_talk|iso_standard|tutorial">
+        <Title/><URL/><WhyUseful/>
+      </Reference>
+    </References>
+  </ContentSections>
+
+  <ComponentLibrary>
+    <AvailableComponents>
+      CppCode — Syntax-highlighted C++ code with copy button (props: code, title, language)
+      OutputBlock — Terminal-style program output (props: output)
+      DefinitionBlock — Concept definition (props: term, children)
+      SyntaxBlock — Syntax pattern/rule (props: title, children)
+      BestPracticeBlock — Best practice recommendation (props: title, children)
+      ExampleBlock — Worked example with collapsible steps (props: title, steps[])
+      ExerciseBlock — Practice exercise (props: title, difficulty, children)
+      NoteBlock — Important note (props: title, children)
+      WarningBlock — Warning/UB alert (props: title, children)
+      CompilerNoteBlock — Compiler-specific note (props: compiler, children)
+      ReferenceList — Reference links (props: references[])
+    </AvailableComponents>
+  </ComponentLibrary>
+</ChapterContentPrompt>

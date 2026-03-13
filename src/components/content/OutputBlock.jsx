@@ -5,7 +5,8 @@
  *   output  {string}  Program output text
  *   title   {string}  Optional title (default: "Output")
  */
-function OutputBlock({ output = '', title = 'Output' }) {
+function OutputBlock({ output, title = 'Output', children }) {
+  output = output || (typeof children === 'string' ? children : '');
   return (
     <div className="my-4 overflow-hidden rounded-xl border border-gray-600 bg-gray-950 shadow">
       <div className="flex items-center gap-2 border-b border-gray-700 bg-gray-900 px-4 py-2">

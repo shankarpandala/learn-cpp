@@ -71,7 +71,8 @@ const LANGUAGE_LABELS = {
  *   language  {string}   Language identifier (default 'cpp')
  *   title     {string}   Optional block title
  */
-function CppCode({ code = '', language = 'cpp', title }) {
+function CppCode({ code, language = 'cpp', title, children }) {
+  code = code || (typeof children === 'string' ? children : '');
   const [copied, setCopied] = useState(false);
 
   const handleCopy = useCallback(async () => {

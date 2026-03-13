@@ -95,7 +95,7 @@ int main() {
               << std::fixed << std::setprecision(2) << price << "\\n";
 
     // std::println: type-safe, concise, and fast
-    std::println("{:<10} x{} = ${:.2f}", item, count, price);
+    std::println("{:<10} x{} = \${:.2f}", item, count, price);
 
     return 0;
 }`}</CppCode>

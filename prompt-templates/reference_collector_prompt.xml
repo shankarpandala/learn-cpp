@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReferenceCollectorPrompt>
+  <Meta>
+    <Purpose>Collect authoritative references for a C++ learning topic</Purpose>
+    <QualityStandard>ISO standard, cppreference.com, established textbooks, CppCon talks, peer-reviewed tutorials</QualityStandard>
+  </Meta>
+
+  <Topic name="{TOPIC_NAME}">
+    <Subject>{SUBJECT}</Subject>
+    <Concepts>{LIST_OF_KEY_CONCEPTS}</Concepts>
+  </Topic>
+
+  <ReferenceCategories>
+    <Category type="iso_standard">
+      <Instruction>The relevant section(s) of the C++ ISO standard (e.g., [basic.life], [class.ctor])</Instruction>
+    </Category>
+    <Category type="cppreference">
+      <Instruction>The most relevant cppreference.com page(s) for this topic</Instruction>
+    </Category>
+    <Category type="best_textbook">
+      <Instruction>Best textbook chapter covering this topic (Stroustrup, Meyers, Josuttis, Vandevoorde, etc.)</Instruction>
+    </Category>
+    <Category type="conference_talk">
+      <Instruction>Best CppCon, Meeting C++, or C++Now talk on this topic</Instruction>
+    </Category>
+    <Category type="tutorial">
+      <Instruction>Best accessible tutorial, blog post, or online guide</Instruction>
+    </Category>
+  </ReferenceCategories>
+
+  <OutputFormat>
+    <Fields>title, author_or_speaker, year, venue_or_publisher, url, one_sentence_summary, why_essential</Fields>
+    <MaxPerCategory>3</MaxPerCategory>
+  </OutputFormat>
+</ReferenceCollectorPrompt>

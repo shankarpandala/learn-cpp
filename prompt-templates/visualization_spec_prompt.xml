@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualizationSpecPrompt>
+  <Meta>
+    <Purpose>Generate a complete React/JSX interactive visualization specification for C++ concepts</Purpose>
+    <TargetStack>React 19 + SVG + Framer Motion 12 + Tailwind CSS 4</TargetStack>
+  </Meta>
+
+  <Concept name="{CONCEPT_NAME}">
+    <Subject>{SUBJECT}</Subject>
+    <CoreIdea>{WHAT_TO_DEMONSTRATE}</CoreIdea>
+    <CppObjects>{POINTERS|MEMORY|STACK|HEAP|OBJECTS|VTABLE|TEMPLATES|ITERATORS|OWNERSHIP|...}</CppObjects>
+  </Concept>
+
+  <VisualizationDesign>
+    <Type>memory-layout|pointer-diagram|call-stack|object-lifetime|vtable-layout|container-internals|ownership-graph</Type>
+    <PrimaryComponent>SVG|Canvas</PrimaryComponent>
+    <Layout>side-by-side|overlay|sequence|dashboard</Layout>
+
+    <InteractiveControls>
+      <StepThrough steps="{EXECUTION_STEPS}" label="Step through code execution"/>
+      <MemoryHighlight address="{ADDR}" label="Highlight memory region"/>
+      <ScopeView scopes="{SCOPE_LIST}" label="Show variable scopes"/>
+      <Slider parameter="{PARAM}" min="{MIN}" max="{MAX}" step="{STEP}" label="{LABEL}"/>
+      <ToggleButton options="{OPT1, OPT2, OPT3}"/>
+    </InteractiveControls>
+
+    <MemoryRegions>
+      <Region name="stack" color="blue" label="Stack"/>
+      <Region name="heap" color="orange" label="Heap"/>
+      <Region name="static" color="green" label="Static/Global"/>
+      <Region name="code" color="purple" label="Code Segment"/>
+    </MemoryRegions>
+
+    <Annotations>
+      <Arrow from="{FROM}" to="{TO}" label="{LABEL}" style="pointer|reference|ownership"/>
+      <Label text="{TEXT}" position="{POSITION}" updates_with="{PARAM}"/>
+      <Highlight region="{REGION}" condition="{CONDITION}"/>
+    </Annotations>
+  </VisualizationDesign>
+
+  <OutputSpec>
+    <ComponentName>{PascalCase name}</ComponentName>
+    <Props>{prop definitions}</Props>
+    <StateVariables>{state definitions}</StateVariables>
+    <JSXTemplate>true</JSXTemplate>
+    <TailwindStyling>true</TailwindStyling>
+    <DarkModeSupport>true</DarkModeSupport>
+  </OutputSpec>
+</VisualizationSpecPrompt>
